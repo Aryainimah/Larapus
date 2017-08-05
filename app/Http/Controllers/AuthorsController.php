@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Author;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
+use Session;
 class AuthorsController extends Controller
 {
     /**
@@ -32,6 +33,7 @@ class AuthorsController extends Controller
     public function create()
     {
         //
+        return view('authors.create');
     }
 
     /**

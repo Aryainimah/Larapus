@@ -11,14 +11,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel='styles' type='text/css'>
-    <link rel="stylesheet" href="/css/bootstrap.min.js">
-    <link rel="stylesheet" href="/css/app.css">
-     <link rel="stylesheet" href="{{ asset('table/css/jquery.dataTables.css') }}">
-    <link rel="stylesheet" href="{{ asset('table/css/dataTables.bootstrap.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/selectize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/selectize.bootstrap3.css') }}"> -->
+    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery.dataTables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.bootstrap.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -47,6 +44,9 @@
                     <li><a href="{{ url('/home')}}">Dashboard</a></li>
                     <li><a href="{{ route('authors.index')}}">Penulis</a></li>
                     @endif
+                    @role('admin')
+                    <li><a href="{{ route('authors.index')}}">Penulis</a></li>
+                    @endrole
                         &nbsp;
                     </ul>
 
@@ -87,10 +87,8 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="/js/jquery-3.1.0.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    <script src="{{ asset('table/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('table/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
         @yield('scripts')
 </body>
 </html>
